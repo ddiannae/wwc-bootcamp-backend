@@ -14,6 +14,7 @@ const getPost = async (req, res, next) => {
   const id = req.params.id;
   try {
     const post = await postService.getPost(id);
+    // TO DO. This actually sends an error and not 404
     if (!post) {
       return res.status(404).json({ message: "Post not found" });
     }
